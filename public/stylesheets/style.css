@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+.zoom-in-out-box {
+    animation: zoom-in-zoom-out 10s ease infinite;
+}
+  
+  @keyframes zoom-in-zoom-out {
+    0% {
+      scale: 0%;
+    }
+    50% {
+      scale: 150%;
+    }
+    100% {
+      scale: 100%;
+    }
+  }

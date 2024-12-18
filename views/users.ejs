@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>User Manager</title>
+    <link rel="stylesheet" href="/public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="bg-zinc-800 h-screen w-full">
+    <a href="/" class="text-white bg-sky-400 rounded-md m-5 absolute pl-2 pr-2 pt-1 pb-1">Go Back Home!</a>
+    <div class="main flex gap-3 flex-wrap justify-center items-center h-5/6">
+        <% if (users.length>0) { %>
+            <% users.forEach(function(user){ %>
+                <div data-aos="flip-down" data-aos-duration="1400" data-aos-delay="200" class="user rounded-lg border-2 border-zinc-700 w-80 bg-zinc-700 flex flex-col gap-3">
+                    <img src="<%=user.image %>" class="rounded-lg mb-3">
+                    <h3 class="text-white text-2xl ml-3"><%=user.name %></h3>
+                    <h3 class="text-white text-2xl ml-3"><%= user.mail %></h3>
+                    <div class="editandremove flex gap-3">
+                        <a href="/edit/<%= user._id %>" class="text-zinc-400 ml-3 text-xl mb-3">Edit User</a>
+                        <a href="/delete/<%= user._id %>" class="text-red-700 ml-3 text-xl mb-3">Remove User</a>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else {%>
+            <h1 class="text-3xl text-center text-white">No users Currently!</h1>
+        <% } %>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

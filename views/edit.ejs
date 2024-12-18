@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>User Manager</title>
+    <link rel="stylesheet" href="/public/stylesheets/style.css">
+</head>
+<body class="bg-zinc-800">
+    <div class="main w-full h-full">
+        <h1 class="text-white text-3xl font-bold text-center m-10">User Manager</h1>
+        <form action="/edit/<%= user._id %>" method="post" class="flex flex-col gap-2 justify-center items-center">
+            <input type="text" name="name" value="<%= user.name %>" placeholder="Name of the User." class="bg-zinc-600 w-1/4 rounded-lg p-2 ml-5 mt-5 outline-none text-white">
+            <input type="text" name="mail" value="<%= user.mail %>" placeholder="Mail ID" class="bg-zinc-600 w-1/4 rounded-lg p-2 ml-5 mt-5 outline-none text-white">
+            <input type="text" name="image" value="<%= user.image %>" placeholder="Image URL" class="bg-zinc-600 w-1/4 rounded-lg p-2 ml-5 mt-5 outline-none text-white">
+            <input type="submit" value="Update Profile" class="bg-sky-600 w-1/6 rounded-lg p-2 ml-5 mt-5 cursor-pointer">
+        </form>
+    </div>
+</body>
+</html>
